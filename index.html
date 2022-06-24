@@ -139,35 +139,54 @@
 
         <!-- <div class="wrapper">
             <h4>SEND HERE</h4> 
-        </div> -->
-
-        <div class="container">  
-            <form id="contact" action="" method="post">
-              <fieldset>
-                <label for="">Nama </label>
-                <input placeholder="Masukkan nama anda.." type="text" tabindex="1" required autofocus>
-              </fieldset>
-              <fieldset>
-                <label for="">Email</label>
-                <input placeholder="Masukkan email anda.." type="email" tabindex="2" required>
-              </fieldset>
-              <!-- <fieldset>
-                <label for="">Phone Number</label>
-                <input placeholder="Your Phone Number" type="tel" tabindex="3" required>
-              </fieldset> -->
-              <fieldset>
-                <label for="">Pesan</label>
-                <textarea placeholder="Tuliskan pesan anda.." tabindex="5" required></textarea>
-              </fieldset>
-              <fieldset>
-                <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
-              </fieldset>
-            </form>
-           
-            
-          </div>
-
-    </section>
+        </div> -->     
+            <div class="container">
+              <div id="contact">
+                <fieldset>
+                  <label for="nama">Nama </label>
+                  <input placeholder="Masukkan nama anda.." id="nama" type="text" tabindex="1" required autofocus>
+                </fieldset>
+      
+                <fieldset>
+                  <label for="email">Email</label>
+                  <input placeholder="Masukkan email anda.." id="email" type="email" tabindex="2" required>
+                </fieldset>
+      
+                <fieldset>
+                  <label for="pesan">Pesan</label>
+                  <textarea placeholder="Tuliskan pesan anda.." id="pesan" tabindex="5" required></textarea>
+                </fieldset>
+      
+                <fieldset>
+                  <button onclick="submit()" name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+                </fieldset>
+              </div>
+      
+              <br>
+              <p id="result-nama"></p>
+              <p id="result-email"></p>
+              <p id="result-pesan"></p>
+              <br />
+      
+            </div>
+      
+            <script>
+              function submit() {
+                var nama = document.getElementById("nama").value;
+                var email = document.getElementById("email").value;
+                var pesan = document.getElementById("pesan").value;
+                if (nama != "" && email != "" && pesan != "") {
+                  document.getElementById("result-nama").innerHTML = nama
+                  document.getElementById("result-email").innerHTML = email
+                  document.getElementById("result-pesan").innerHTML = pesan
+                  return true;
+                } else {
+                  alert('data tidak valid')
+                }
+              }
+            </script>
+      
+          </section>
     <!-- akhir contacts -->
 
     <!-- footer -->
